@@ -1,0 +1,5 @@
+vault_mysql_root_password: "Passw0rd"
+vault_mysql_app_password: "Passw0rd"
+vault_ssl_cert_path: "/etc/ssl/certs/company.crt"
+vault_ssl_key_path: "/etc/ssl/private/company.key"
+vault_admin_password: "Passw0rd"
