@@ -1,0 +1,16 @@
+app_name: "advanced-lamp"
+app_version: "6.7.0"
+admin_email: "mathias.moll@67.sigma"
+
+apache_package: "{% if ansible_os_family == 'Debian' %}apache2{% else %}httpd{% endif %}"
+mysql_package: "{% if ansible_os_family == 'Debian' %}mysql-server{% else %}mariadb-server{% endif %}"
+
+backup_enabled: "{{ app_env == 'production' }}"
+monitoring_enabled: "{{ app_env == 'production' }}"
+log_level: "{% if debug_mode %}DEBUG{% else %}INFO{% endif %}"
+
+mysql_root_password: "{{ vault_mysql_root_password }}"
+mysql_app_password: "{{ vault_mysql_app_password }}"
+ssl_cert_path: "{{ vault_ssl_cert_path }}"
+ssl_key_path: "{{ vault_ssl_key_path }}"
+admin_password: "{{ vault_admin_password }}"
